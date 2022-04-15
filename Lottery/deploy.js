@@ -1,10 +1,12 @@
 const HdWalletProvide = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
+const mnemonic = require('./Key');
+const api = require('./API');
 
 const provider = new HdWalletProvide(
-    'paper enroll rookie laundry replace inspire wink pupil hip indoor absorb barrel',
-    'https://rinkeby.infura.io/v3/d50e9e25f12e4dd6bfddd3c771b78ccd'
+    mnemonic,
+    api
 );
 
 const web3 = new Web3(provider);
@@ -18,6 +20,7 @@ const deploy = async () => {
     .deploy({ data: bytecode })
     .send({ gas: '1000000', from: accounts[0] });
 
+    console.log(interface);
     console.log("Contract is deployed on - ",result.options.address);
 }
 deploy();
