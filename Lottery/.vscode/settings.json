@@ -1,0 +1,6 @@
+{
+    "solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52",
+    "files.associations": {
+        "CIRCLE.C": "cpp"
+    }
+}

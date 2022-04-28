@@ -74,7 +74,7 @@ function App() {
 
     const win = await lottery.methods.getWinner().call();
 
-    setStatus("Winner" + win);
+    setStatus("Winner - " + win);
   }
 
   const handleChange = (event) => {
